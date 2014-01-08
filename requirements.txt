@@ -1,0 +1,6 @@
+gevent
+lxml
+requests
+redis
+MySQLdb
+python-magic

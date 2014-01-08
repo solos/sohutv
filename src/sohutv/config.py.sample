@@ -1,0 +1,41 @@
+#!/usr/bin/python
+#coding = utf-8
+
+#data mysql config
+DB_USER = ''
+DB_PASSWORD = ''
+DB_HOST = 'localhost'
+DB_DB = ''
+DB_CHARSET = 'UTF8'
+
+#logger config
+LOG_NAME = 'recrawler'
+BASIC_LOG_PATH = './log/'
+LOG_FILENAME = 'recrawler'
+
+#redis config
+RHOST = '127.0.0.1'
+RPORT = 6379
+RDB = 0
+BITMAP = 'map'
+EXPIRE = 10
+QUEUE = 'queue'
+QUEUE_FORMAT = 'queue_%s'
+
+#gevent and requests config
+GPOOLSIZE = 10
+TIMEOUT = 5
+HEADERS = {}
+USER_AGENT = ''
+
+
+POP_TIMES = 10
+
+#worker config
+INTERVAL = 1
+
+#proxy config
+PROXY_EXPIRETIME = 10
+
+
+IGNORE_SUFFIXES = set(['.jpg', '.jpeg', '.png', '.gif', '.pdf'])
