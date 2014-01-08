@@ -22,7 +22,7 @@ lxml
 #数据存取
 mysql 
 
-    vid, nid, pid, cover, playlistId, o_playlistId, cid, subcid, osubcid, category, ateCode, pianhua, tag, tvid, pubdate 
+    vid, nid, pid, cover, playlistId, o_playlistId, cid, subcid, osubcid, category, ateCode, pianhua, tag, tvid, pubdate, last, brief, title
 
 #反防抓取策略
 使用随机代理
