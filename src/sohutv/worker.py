@@ -7,7 +7,8 @@ from gevent.pool import Pool
 
 import db
 import json
-import queue
+#import queue
+import redisqueue as queue
 import config
 import fetcher
 import encoding
@@ -18,7 +19,8 @@ gpool = Pool(config.GPOOLSIZE)
 
 
 def work():
-    q = queue.Queue()
+    #q = queue.Queue()
+    q = queue.RedisQueue()
     q.lpush('{"url": "http://tv.sohu.com"}')
     jobs = q.getjobs()
     while jobs:
@@ -43,6 +45,8 @@ def handle(job, *args, **kwargs):
     db.insert_item(item)
     urls = extracter.extract_sohutv(url, source)
     for i in urls:
+        if queue.check_fetched(config.BITMAP, i):
+            continue
         queue.lpush('{"url": "%s"}' % i)
     return urls
 
